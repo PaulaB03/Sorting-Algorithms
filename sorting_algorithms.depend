@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1678980357 source:d:\fmi\sd\sorting_algorithms\main.cpp
+	<iostream>
+	<chrono>
+	"sorting.h"
+	"testing.h"
+
+1678975550 d:\fmi\sd\sorting_algorithms\sorting.h
+	<vector>
+
+1678042147 source:d:\fmi\sd\sorting_algorithms\sorting.cpp
+	"sorting.h"
+	<iostream>
+
+1678974425 source:d:\fmi\sd\sorting_algorithms\mergesort.cpp
+	"sorting.h"
+
+1678975549 source:d:\fmi\sd\sorting_algorithms\shellsort.cpp
+	"sorting.h"
+
+1678974504 source:d:\fmi\sd\sorting_algorithms\radixsort.cpp
+	"sorting.h"
+
+1678975549 source:d:\fmi\sd\sorting_algorithms\heapsort.cpp
+	"sorting.h"
+	<iostream>
+
+1678979359 source:d:\fmi\sd\sorting_algorithms\quicksort.cpp
+	"sorting.h"
+
+1678975550 source:d:\fmi\sd\sorting_algorithms\testing.cpp
+	"testing.h"
+	<random>
+
+1678975549 d:\fmi\sd\sorting_algorithms\testing.h
+
