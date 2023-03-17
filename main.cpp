@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <chrono>
 #include "sorting.h"
 #include "testing.h"
@@ -16,7 +17,19 @@ void timeTest(long* arr, long n) {
     clock_t start, end;
     long* testing = copyArray(arr, n);
 
+    /// Default sort
+    start = clock();
+    sort(testing, testing + n);
+    end = clock();
+
+    // Check if the test is correct and show results
+    if (rightSort(testing, n))
+        printf("Default Sort Time: %.5f\n",1.0*(end-start)/CLOCKS_PER_SEC);
+    else
+        cout << "TEST FAILED\n";
+
     /// Radix Sort test
+    testing = copyArray(arr, n);
     start = clock();
     radixSort(testing, n);
     end = clock();
@@ -77,10 +90,12 @@ void timeTest(long* arr, long n) {
 }
 
 void arrayTest(long n, long vmax) {
+    // Generate a random vector
     long* arr = generateRandomArray(n, vmax);
     cout << "\nVector random cu valoare maxima " << vmax << "\n";
     timeTest(arr, n);
 
+    // Generate a vector sortes
     arr = generateReverseSortArray(n, n);
     cout << "\nVector sortat descrescator\n";
     timeTest(arr, n);
@@ -99,7 +114,7 @@ int main()
         cout << "N = ";
         cin >> n;
 
-        cout << "MAX =";
+        cout << "MAX = ";
         cin >> val_max;
 
         arrayTest(n, val_max);

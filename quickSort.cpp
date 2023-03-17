@@ -1,14 +1,17 @@
 #include "sorting.h"
 
+// Function to swap two elements
 void swap(long *a, long *b) {
     long temp = *a;
     *a = *b;
     *b = temp;
 }
 
+// Function to return the median of three
 long medianOfThree(long v[], long low, long high) {
     long mid = (low + high) / 2;
 
+    // Sort the left, middle and right elemens
     if (v[mid] < v[low])
         swap(&v[low], &v[mid]);
 
@@ -18,10 +21,12 @@ long medianOfThree(long v[], long low, long high) {
     if (v[high] < v[mid])
         swap(&v[mid], &v[high]);
 
+    // Swap the middle and previous to last element
     swap(&v[mid], &v[high-1]);
     return v[high-1];
 }
 
+// Use a simple sort to sort the last 3 elements
 void insertionSort(long v[], long low, long high) {
     for (long i = low + 1; i <= high; i++) {
         long key = v[i];
@@ -34,6 +39,7 @@ void insertionSort(long v[], long low, long high) {
     }
 }
 
+// Sort the partition
 long partition(long v[], long low, long high, long pivot) {
     long left = low, right = high-1;
 
